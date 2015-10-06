@@ -6,7 +6,7 @@ Issue Tracker:https://github.com/kollo/xearth/issues
 Bitcoin: tbd
 
 Auto Name:xearth
-Summary:tbd
+Summary:Xearth live wallpaper.
 Description:
 Xearth sets the screen background to an image of the Earth, 
 as seen from your favorite vantage point in space, correctly 

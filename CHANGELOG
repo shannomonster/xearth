@@ -1,0 +1,163 @@
+
+
+2015:
+Oct: A package for gitlab has been assembled. The licence probably cannot be
+changed to an OSI approved open source license, so we have to keep the 
+original one (which does not allow commercial use).
+ 
+
+2011:
+Version xxx.Android (c) by Markus Hoffmann <kollo@users.sourceforge.net>:
+
+The c sources have been rewritten in Java. GIF routines have been removed.
+The original source-package of version 1.1 and its original licence has been 
+included.
+
+
+
+Here is the original changelog from the UNIX Version of xearth:
+
+Release history for xearth, version 1.1
+Kirk Lauritz Johnson <tuna@indra.com>
+6 November 1999
+
+
+xearth version 1.1 (6 November 1999)
+
+  Finalize some changes that I've been sitting on for a few years;
+  integrate some contributed code. New features:
+
+  - new position specifier (moon)
+  - new rotation specifier (galactic)
+  - cylindrical projections (-proj cyl)
+  - support for "real" 24-bit displays
+  - support for running xearth it its own top-level window (-noroot,
+    -geometry)
+
+  Plus miscellaneous code cleanup.
+
+  "moon" and "galactic" changes are courtesy of Frank T. Solensky
+  <solensky@TopLayer.com>.
+
+
+xearth version 1.0 (29 September 1995)
+
+  Many new features:
+
+  - new position specifier (random)
+  - Mercator projections (-proj)
+  - rotated views (-rot)
+  - shading discontinuity at terminator (-term)
+  - rendering X image only once (-once)
+  - user-specifiable marker information (-markerfile)
+  - user-specifiable marker alignment (align=xxx)
+  - user-specifiable label position (-labelpos)
+  - mix of single- and double-pixel stars (-bigstars)
+  - support for new display depths (12, 15, 16, and 24 bits)
+  - inclusion of Robert Berger's gamma test image
+
+  Plenty of general code tuning and cleaning.
+
+  New copyright notice to reflect Unisys Corporation's patent on the
+  LZW compression technique employed in the GIF file format.
+
+
+xearth version 0.92 (1 June 1994)
+
+  Fixed the broken code that was attempting to handle the situation
+  when the requested font couldn't be loaded.
+
+  Added black border/outline to label text (as was already being done
+  for marker text).
+
+  Several small changes to keep lint happier.
+
+
+xearth version 0.91 (25 May 1994)
+
+  Added code #ifdef-ed by NO_RANDOM and NO_SETPRIORITY to provide a
+  standard workaround for systems without random() and/or
+  setpriority().
+
+  First cut at support for monochrome mode and 1-bit framebuffers.
+  Monochrome mode is the default on 1-bit framebuffers; it can also be
+  enabled with the "-mono" command line flag or the ".mono" X
+  resource.
+
+  Provided built-in bzero() workalike to avoid problems with pre-X11R5
+  systems not having <X11/Xfuncs.h> and dealing with the ugly
+  machinations required to automatically determine the right thing to
+  do.
+
+  Fixed bug in man page; the description of the interpretation of
+  positive and negative values of longitude was incorrect.
+
+  Fixed and uncommented the code that tries to kill the resources of
+  any previous clients that had scribbled on the root window and left
+  an _XSETROOT_ID property. (Note that xearth still doesn't set an
+  _XSETROOT_ID property itself; see the big comment about _XSETROOT_ID
+  in x11.c for details.)
+
+  Minor performance tweaks and a few bug fixes in the dithering code.
+
+  Added complete text of copyright to all source and documentation
+  files (necessary for inclusion in the X11R6 contrib package).
+
+
+xearth version 0.9 (14 May 1994)
+
+  Wholesale changes. Many new features, including:
+
+  - child process no longer forked by default
+  - support for fixed, sun-relative, and orbital viewing positions
+  - lines of longitude and latitude
+  - (random) star-filled backgrounds
+  - support for both command line options and X resources
+  - brightly-colored location markers
+
+  plus numerous other small changes and bug fixes.
+
+
+xearth version 0.5 (23 July 1993)
+
+  Initial release
+
+----------------------------------------------------------------
+
+Copyright (C) 1989, 1990, 1993-1995, 1999 Kirk Lauritz Johnson
+
+Parts of the source code (as marked) are:
+  Copyright (C) 1989, 1990, 1991 by Jim Frost
+  Copyright (C) 1992 by Jamie Zawinski <jwz@lucid.com>
+
+Permission to use, copy, modify and freely distribute xearth for
+non-commercial and not-for-profit purposes is hereby granted without
+fee, provided that both the above copyright notice and this permission
+notice appear in all copies and in supporting documentation.
+
+Unisys Corporation holds worldwide patent rights on the Lempel Zev
+Welch (LZW) compression technique employed in the CompuServe GIF image
+file format as well as in other formats. Unisys has made it clear,
+however, that it does not require licensing or fees to be paid for
+freely distributed, non-commercial applications (such as xearth) that
+employ LZW/GIF technology. Those wishing further information about
+licensing the LZW patent should contact Unisys directly at
+(lzw_info@unisys.com) or by writing to
+
+  Unisys Corporation
+  Welch Licensing Department
+  M/S-C1SW19
+  P.O. Box 500
+  Blue Bell, PA 19424
+
+The author makes no representations about the suitability of this
+software for any purpose. It is provided "as is" without express or
+implied warranty.
+
+THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO
+EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF
+USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
