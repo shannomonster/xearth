@@ -6,12 +6,9 @@ So it can be released to F-Droid.
  
 
 2011:
-Version xxx.Android (c) by Markus Hoffmann <kollo@users.sourceforge.net>:
+Version 1.2-22. Android (c) by Markus Hoffmann <kollo@users.sourceforge.net>:
 
 The c sources have been rewritten in Java. GIF routines have been removed.
-The original source-package of version 1.1 and its original licence has been 
-included.
-
 
 
 Here is the original changelog from the UNIX Version of xearth:
@@ -120,43 +117,3 @@ xearth version 0.9 (14 May 1994)
 xearth version 0.5 (23 July 1993)
 
   Initial release
-
-----------------------------------------------------------------
-
-Copyright (C) 1989, 1990, 1993-1995, 1999 Kirk Lauritz Johnson
-
-Parts of the source code (as marked) are:
-  Copyright (C) 1989, 1990, 1991 by Jim Frost
-  Copyright (C) 1992 by Jamie Zawinski <jwz@lucid.com>
-
-Permission to use, copy, modify and freely distribute xearth for
-non-commercial and not-for-profit purposes is hereby granted without
-fee, provided that both the above copyright notice and this permission
-notice appear in all copies and in supporting documentation.
-
-Unisys Corporation holds worldwide patent rights on the Lempel Zev
-Welch (LZW) compression technique employed in the CompuServe GIF image
-file format as well as in other formats. Unisys has made it clear,
-however, that it does not require licensing or fees to be paid for
-freely distributed, non-commercial applications (such as xearth) that
-employ LZW/GIF technology. Those wishing further information about
-licensing the LZW patent should contact Unisys directly at
-(lzw_info@unisys.com) or by writing to
-
-  Unisys Corporation
-  Welch Licensing Department
-  M/S-C1SW19
-  P.O. Box 500
-  Blue Bell, PA 19424
-
-The author makes no representations about the suitability of this
-software for any purpose. It is provided "as is" without express or
-implied warranty.
-
-THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
-INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO
-EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT OR
-CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF
-USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.

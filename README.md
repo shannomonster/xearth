@@ -26,7 +26,7 @@ Parts of the source code of the Android port of xearth are
     Copyright (C) 2011-2015 by Markus Hoffmann.
 The Sources of the Android version of xearth are completely rewritten 
 code based on the original sourcecode 
-    Copyright (C) 1989, 1990, 1993-1995, 1999 by Kirk Lauritz Johnson.
+    Copyright (C) 1989, 1990, 1993-1995, 1999 by Kirk Lauritz Johnson
 with the overlay extension based on code 
     Copyright (C) 1997-2006 by Greg Hewgill
 

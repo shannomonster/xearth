@@ -1,10 +1,15 @@
 package de.drhoffmannsoftware.xearth;
 
-/* This file is part of Xearth Wallpaper, the xearth android live background 
- * =========================================================================
- * xearth is free software and comes with NO WARRANTY - read the file
- * COPYING for details
+/* XearthWallpaper.java          (c) 2011-2015 by Markus Hoffmann and 
+ *                   (c) 1989, 1990, 1993-1995, 1999 by Kirk Lauritz Johnson and
+ *                               (C) 1997-2006 by Greg Hewgill
+ *
+ * This file is part of Xearth live Wallpaper for Android 
+ * ==================================================================
+ * Xearth live Wallpaper for Android is free software and comes with 
+ * NO WARRANTY - read the file COPYING/LICENSE for details
  */
+
 
 import java.util.Arrays;
 import java.util.Calendar;

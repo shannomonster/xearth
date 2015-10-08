@@ -1,9 +1,11 @@
 package de.drhoffmannsoftware.xearth;
 
-/* This file is part of Xearth Wallpaper, the xearth android live background 
- * =========================================================================
- * xearth is free software and comes with NO WARRANTY - read the file
- * COPYING for details
+/* BitMap.java    (c) 2011 by Markus Hoffmann
+ *
+ * This file is part of Xearth live Wallpaper for Android 
+ * ==================================================================
+ * Xearth live Wallpaper for Android is free software and comes with 
+ * NO WARRANTY - read the file COPYING/LICENSE for details
  */
 
 import java.io.File;

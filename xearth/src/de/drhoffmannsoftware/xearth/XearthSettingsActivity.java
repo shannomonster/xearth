@@ -1,5 +1,15 @@
 package de.drhoffmannsoftware.xearth;
 
+/* XearthSettingsActivity.java  (c) 2011-2015 by Markus Hoffmann
+ *                   
+ *
+ * This file is part of Xearth live Wallpaper for Android 
+ * ==================================================================
+ * Xearth live Wallpaper for Android is free software and comes with 
+ * NO WARRANTY - read the file COPYING/LICENSE for details
+ */
+
+
 import java.io.File;
 import java.io.FilenameFilter;
 
@@ -25,11 +35,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-/* This file is part of Xearth Wallpaper, the xearth android live background 
- * =========================================================================
- * xearth is free software and comes with NO WARRANTY - read the file
- * COPYING for details
- */
 
 public class XearthSettingsActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
 	final static String TAG="xearthconfig";
