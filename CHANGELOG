@@ -1,9 +1,8 @@
 
 
 2015:
-Oct: A package for gitlab has been assembled. The licence probably cannot be
-changed to an OSI approved open source license, so we have to keep the 
-original one (which does not allow commercial use).
+Oct: A package for gitlab has been assembled. The licence was changed to MIT.
+So it can be released to F-Droid.
  
 
 2011:

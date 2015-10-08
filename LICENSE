@@ -1,54 +1,23 @@
-Parts of the source code of the Android port of xearth are 
-Copyright (C) 2011-2015 by Markus Hoffmann.
-The Sources of the Android version of xearth are completely rewritten 
-code based on the original sourcecode (C) 1989, 1990, 1993-1995, 1999
-by Kirk Lauritz Johnson.
- 
-Below is the original standard licence of xearth V.1.1, which was the basis of 
-Xearth live Wallpaper for Android. However, all parts of this package, 
-which are not covered by this original notice, should be released under
-a open source license, if possible.
+The MIT License (MIT)
 
-The notes about Unisys Corporation do not apply to the Android version of 
-xearth, because the GIF-routines have been removed.
+Copyright (c) 1989, 1990, 1993-1995, 1999 Kirk Lauritz Johnson
+Copyright (C) 1997-2006 Greg Hewgill
+Copyright (c) 2011-2015 Markus Hoffmann
 
-LEGAL STUFF
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-    Copyright (C) 1989, 1990, 1993-1995, 1999 Kirk Lauritz Johnson
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-    Parts of the source code (as marked) are:
-      Copyright (C) 1989, 1990, 1991 by Jim Frost
-      Copyright (C) 1992 by Jamie Zawinski <jwz@lucid.com>
-
-    Permission to use, copy, modify and freely distribute xearth for
-    non-commercial and not-for-profit purposes is hereby granted
-    without fee, provided that both the above copyright notice and
-    this permission notice appear in all copies and in supporting
-    documentation.
-
-    Unisys Corporation holds worldwide patent rights on the Lempel Zev
-    Welch (LZW) compression technique employed in the CompuServe GIF
-    image file format as well as in other formats. Unisys has made it
-    clear, however, that it does not require licensing or fees to be
-    paid for freely distributed, non-commercial applications (such as
-    xearth) that employ LZW/GIF technology. Those wishing further
-    information about licensing the LZW patent should contact Unisys
-    directly at (lzw_info@unisys.com) or by writing to
-
-      Unisys Corporation
-      Welch Licensing Department
-      M/S-C1SW19
-      P.O. Box 500
-      Blue Bell, PA 19424
-
-    The author makes no representations about the suitability of this
-    software for any purpose. It is provided "as is" without express
-    or implied warranty.
-
-    THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
-    INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS,
-    IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT
-    OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
-    NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
-    CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
