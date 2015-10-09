@@ -1,0 +1,50 @@
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.11.1'
+    }
+}
+
+apply plugin: 'android'
+
+allprojects {
+    tasks.withType(Compile) {
+        options.compilerArgs << '-Xlint:all'
+        options.compilerArgs << '-Xlint:-deprecation'
+    }
+}
+
+android {
+    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
+
+        versionName project.VERSION_NAME
+        versionCode Integer.parseInt(project.VERSION_CODE)
+
+    }
+    signingConfigs {
+        release {
+            storeFile file("release.keystore")
+            storePassword "helo"
+            keyAlias "helo"
+            keyPassword "helo"
+        }
+    }
+ 
+
+    buildTypes {
+       release {
+            signingConfig signingConfigs.release
+        }
+    }
+
+}
+
