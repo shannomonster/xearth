@@ -1,9 +1,8 @@
 Categories:Science & Education
 License:MIT
 Web Site:http://xearth.org/
-Source Code:https://github.com/kollo/xearth
-Issue Tracker:https://github.com/kollo/xearth/issues
-Bitcoin: tbd
+Source Code:https://gitlab.com/kollo/xearth
+Issue Tracker:https://gitlab.com/kollo/xearth/issues
 
 Auto Name:xearth
 Summary:Xearth live wallpaper.
@@ -17,14 +16,10 @@ several options.
 .
 
 Repo Type:git
-Repo:https://github.com/kollo/xearth.git
+Repo:https://gitlab.com/kollo/xearth.git
 
 Build:0.1,1
     commit=v1.0
-    subdir=src
-    target=android-21
 
-Auto Update Mode:Version v%v
-Update Check Mode:Tags .*[0-9]$
-Current Version:1.2
-Current Version Code:22
+Auto Update Mode:none
+Update Check Mode:Tags
