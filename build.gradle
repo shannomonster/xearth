@@ -30,19 +30,11 @@ android {
         versionCode Integer.parseInt(project.VERSION_CODE)
 
     }
-    signingConfigs {
-        release {
-            storeFile file("release.keystore")
-            storePassword "helo"
-            keyAlias "helo"
-            keyPassword "helo"
-        }
-    }
  
 
     buildTypes {
        release {
-            signingConfig signingConfigs.release
+            
         }
     }
 
