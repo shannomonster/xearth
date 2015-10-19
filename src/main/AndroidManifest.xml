@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+ * AndroidManifest.java    (c) 2011 by Markus Hoffmann
+ *
+ * This file is part of Xearth live Wallpaper for Android 
+ * ==================================================================
+ * Xearth live Wallpaper for Android is free software and comes with 
+ * NO WARRANTY - read the file COPYING/LICENSE for details
+ *
+-->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.drhoffmannsoftware.xearth"
     android:versionCode="22"
