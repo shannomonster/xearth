@@ -46,7 +46,11 @@
 #ifndef _XEARTH_H_
 #define _XEARTH_H_
 
+#undef HAVE_X11
+
+#ifdef HAVE_X11
 #include <X11/Xos.h>
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -238,6 +242,13 @@ typedef struct
   int   align;
 } MarkerInfo;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* bmp.c */
+extern void bmp_output _P((void));
+
 /* dither.c */
 extern int     dither_ncolors;
 extern u_char *dither_colormap;
@@ -308,6 +319,7 @@ extern int    do_grid;
 extern int    grid_big;
 extern int    grid_small;
 extern int    do_label;
+extern int    labelpos;
 extern int    do_markers;
 extern char  *markerfile;
 extern int    wait_time;
@@ -362,6 +374,10 @@ extern void   fatal _P((const char *)) _noreturn;
 #endif
 #ifndef _tolower
 # define _tolower(c)  ((c) - 'A' + 'a')
+#endif
+
+#ifdef __cplusplus
+} // extern "C"
 #endif
 
 #endif

@@ -47,14 +47,14 @@
 #define _PORT_H_
 
 /* Allow prototypes throughout */
-#if __STDC__
+#if defined(__STDC__) || defined(__cplusplus)
 #define _P(x) x
 #else
 #define _P(x) ()
 #endif
 
 /* Allow use of "const" */
-#if !defined(__GNUC__)
+#if !defined(__GNUC__) && !defined(_MSC_VER)
 #ifndef const
 #define const
 #endif
@@ -66,5 +66,16 @@
 #else
 #define _noreturn
 #endif
+
+/* typedefs and defines for Win32 systems */
+#ifdef _WIN32
+#include <process.h>
+typedef unsigned char u_char;
+typedef unsigned short u_short;
+#define srandom(x) srand(x)
+#define random() rand()
+#define nice(x) (0)
+#define NO_SETPRIORITY
+#endif /* WIN32 */
 
 #endif

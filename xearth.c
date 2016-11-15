@@ -58,6 +58,7 @@ extern int errno;
 #define ModePPM  (1)
 #define ModeGIF  (2)
 #define ModeTest (3)
+#define ModeBMP  (4)
 
 /* tokens in specifiers are delimited by spaces, tabs, commas, and
  * forward slashes
@@ -104,6 +105,7 @@ int      do_grid;               /* show lon/lat grid?          */
 int      grid_big;              /* lon/lat grid line spacing   */
 int      grid_small;            /* dot spacing along grids     */
 int      do_label;              /* label image                 */
+int      labelpos;              /* label position              */
 int      do_markers;            /* display markers (X only)    */
 char    *markerfile;            /* for user-spec. marker info  */
 int      wait_time;             /* wait time between redraw    */
@@ -129,9 +131,11 @@ int main(argc, argv)
 {
   set_defaults();
 
+#if HAVE_X11
   if (using_x(argc, argv))
     command_line_x(argc, argv);
   else
+#endif
     command_line(argc, argv);
 
   if (priority != 0)
@@ -205,13 +209,19 @@ void output()
     gif_output();
     break;
 
+#ifdef HAVE_X11
   case ModeX:
     if ((!do_fork) || (fork() == 0))
       x11_output();
     break;
+#endif
 
   case ModeTest:
     test_mode();
+    break;
+
+  case ModeBMP:
+    bmp_output();
     break;
 
   default:
@@ -456,6 +466,7 @@ void set_defaults()
   view_mag         = 1.0;
   do_shade         = 1;
   do_label         = 0;
+  labelpos         = 0;
   do_markers       = 1;
   wait_time        = 300;
   time_warp        = 1;
@@ -555,6 +566,9 @@ void command_line(argc, argv)
     {
       i += 1;
       if (i >= argc) usage("missing arg to -labelpos");
+      sscanf(argv[i], "%d", &labelpos);
+      if ((labelpos > 3) || (labelpos < 0))
+        fatal("arg to -labelpos must be between 0 and 3");
       warning("-labelpos not relevant for GIF or PPM output");
     }
     else if (strcmp(argv[i], "-markers") == 0)
@@ -772,6 +786,10 @@ void command_line(argc, argv)
     else if (strcmp(argv[i], "-test") == 0)
     {
       output_mode = ModeTest;
+    }
+    else if (strcmp(argv[i], "-bmp") == 0)
+    {
+      output_mode = ModeBMP;
     }
     else if (strcmp(argv[i], "-display") == 0)
     {
@@ -1258,7 +1276,7 @@ void usage(msg)
   fprintf(stderr, " [-onepix|-twopix] [-mono|-nomono] [-ncolors num_colors]\n");
   fprintf(stderr, " [-font font_name] [-root|-noroot] [-geometry geom] [-title title]\n");
   fprintf(stderr, " [-iconname iconname] [-name name] [-fork|-nofork] [-once|-noonce]\n");
-  fprintf(stderr, " [-nice priority] [-gif] [-ppm] [-display dpyname] [-version]\n");
+  fprintf(stderr, " [-nice priority] [-gif] [-ppm] [-bmp] [-display dpyname] [-version]\n");
   fprintf(stderr, "\n");
   exit(1);
 }
