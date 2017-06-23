@@ -1,0 +1,48 @@
+Following files are taken from flatplanet:
+
+http://flatplanet.sourceforge.net/maps/
+
+clouds_2048.jpg
+===============
+
+This is the (fix) cloud overlay image which also is used by the web-version of 
+xearth: http://xearth.org/live
+
+In pronciple it would be possible to update this image from a weather satellite
+image service....
+
+Like it is done for xplanet here:
+
+http://xplanetclouds.com/free/
+
+night_electric.jpg 
+==================
+(this is the default night map that comes with xplanet)
+
+This is a scaled version of 
+http://earthobservatory.nasa.gov/Newsroom/NewImages/Images/earth_lights_lrg.jpg
+Details about this file can be found at
+http://visibleearth.nasa.gov/cgi-bin/viewrecord?5826
+This image is not copyrighted.
+
+
+
+usgs.jpg
+========
+From JPL's maps of the solar system. (http://maps.jpl.nasa.gov/)
+Data Source: unknown (topo + land/ocean?)
+Creator: USGS
+Nice topo-like map colored by land/ocean from the USGS.
+
+
+
+
+
+
+
+
+
+
+
+
+It is possibple to also use other Maps from flatplanet with xearth. 

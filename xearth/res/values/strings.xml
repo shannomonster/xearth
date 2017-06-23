@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Xearth</string>
+    <string name="wallpaper_name">Xearth Wallpaper</string>
+    <string name="wallpapers">Xearth Wallpaper</string>
+    <string name="wallpaper_xearth">Xearth</string>
+    <string name="xearth_settings">Settings</string>
+    <string name="description">Xearth displays an image of the earth, 
+        as seen from your favorite vantage point in space 
+        (this can be your current position), correctly shaded for 
+        the current position of the sun. 
+        By default, xearth updates the displayed image every five 
+        minutes. The time between updates can be changed via the preferencees settings. </string>
+    <string name="impressum">
+<![CDATA[
+    Copyright (c) 2011-2015 Markus Hoffmann
+     ]]>
+    </string>
+    <string name="preferences_about_title">Xearth V.1.1 for Android</string>
+    <string name="preferences_credits_market_publisher_title">More Apps from the author of this one</string>
+    <string name="preferences_credits_xearth_title">Credits: xearth V.1.1 for UNIX and LINUX</string>
+    <string name="preferences_credits_market_app_title">This app on the market</string>
+    <string name="preferences_initiate_reset_title">Short Help on how to use the App</string>
+    
+    <string name="word_copyrmeldung">&#169; 2011&#8211;2015 Markus Hoffmann et al.</string>
+    <string name="word_ok">OK</string>
+    <string name="word_copyright">Copyright</string>
+    <string name="word_version">Version</string>
+    <string name="word_help">Help/Instructions</string>
+    
+    <string name="menu_projectiontype">Select projection type</string>
+    <string name="menu_positiontype">Select view position type</string>
+    <string name="menu_viewtitle">View and Projection</string>
+    <string name="menu_rotationtype">Select rotation type</string>
+    <string name="menu_longitude">Specify fixed longitude&#8230;</string>
+    <string name="menu_latitude">Specify fixed latitude&#8230;</string>
+    <string name="menu_sunpos">Specify sun position&#8230;</string>
+    <string name="menu_magnification">Specify magnification factor&#8230;</string>
+     <string name="menu_shiftx">Specify shift x [pxls]&#8230;</string>
+     <string name="menu_shifty">Specify shift y [pxls]&#8230;</string>
+     <string name="menu_extrastitle">Extras</string>
+     <string name="menu_impressum">About/Impressum/Contact</string>
+     <string name="menu_stars">Show stars</string>
+     <string name="menu_stars2">show stars in the background</string>
+     <string name="menu_starfreq">Specify star frequency&#8230;</string>
+     <string name="menu_starsize">Specify star size&#8230;</string>
+     <string name="menu_grid">Show grid</string>
+     <string name="menu_grid2">show a coordinate grid</string>
+     <string name="menu_time">Specify time&#8230;</string>
+     <string name="menu_timewarp">Specify time warp factor&#8230;</string>
+     <string name="menu_timewarp2">accelerate motion&#8230;</string>
+     <string name="menu_interval">Specify time interval [s]</string>
+     <string name="menu_interval2">time interval between updates</string>
+     <string name="menu_term">Specify day termination [%]</string>
+     <string name="menu_dayb">Specify day brightness [%]</string>
+     <string name="menu_nightb">Specify night brightness [%]</string>
+     <string name="menu_basemap">Select base map&#8230;</string>
+     <string name="menu_overlay">Overlay</string>
+     <string name="menu_overlay2">use cloud overlay image</string>
+      <string name="menu_markers">Show markers</string>
+      <string name="menu_markers2">show markers (Cities)</string>
+     <string name="menu_labels">Show labels</string>
+      <string name="menu_labels2">Show labels (time, position)</string>
+      <string name="menu_shade">Shade</string>
+      <string name="menu_shade2">Shade</string>
+      
+     
+     
+     
+    
+    <string name="helpdialog">
+<![CDATA[
+    <h1>Short help</h1> 
+    
+    Xearth sets the wallpaper (desktop background) to an image of the Earth, as seen from your favorite 
+    vantage point in space, correctly shaded for the current position of the Sun. 
+    By default, xearth updates the displayed image every five minutes. 
+    The time between updates can be changed with the settings.
+    
+  <h4>proj_type</h4>
+    Specify the projection type xearth should use. 
+    Supported projection types are mercator, orthographic, and cylindrical; 
+    Xearth uses an orthographic projection by default.
+
+<h4>view position type</h4>
+    Specify the position from which the Earth should be viewed. 
+    Valid view position types are: <i>fixed, relative to the sun, orbit, moon,</i> and <i>random</i>. 
+<p/>
+    If you use the <i>fixed</i> position type, you should specify two arguments, interpreted as 
+    numerical values indicating the latitude and longitude (expressed in decimal degrees) of a viewing 
+    position that is fixed with respect to the Earth\'s surface. Positive and negative values of 
+    latitude correspond to positions north and south of the equator, respectively. Positive and negative 
+    values of longitude correspond to positions east and west of Greenwich, respectively.
+<p/>
+    If you use the <i>relative to sun</i> position type the two arguments, interpreted as numerical 
+    values indicating the offsets in latitude and longitude (expressed in decimal degrees) of a viewing 
+    position that is fixed with respect to the position of the Sun. Positive and negative values of latitude 
+    and longitude are interpreted as for the fixed keyword.
+<p/>
+    If you use the <i>orbit</i> position type the two arguments, interpreted as numerical values indicating the 
+    period (in hours) and orbital inclination (in decimal degrees) of a simple circular orbit; the viewing 
+    position follows this orbit. Astute readers will surely note that these parameters are not sufficient 
+    to uniquely specify a single circular orbit. This problem is solved by limiting the space of possible 
+    orbits to those positioned over 0 degrees latitude, 0 degrees longitude at time zero (the Un*x epoch)).
+<p/>
+    If you use the <i>moon</i> position type, 
+    the viewing position is the current position of the moon, recalculated at each update.
+<p/>
+	If you use the <i>random</i> position type, the viewing position is selected at random each time an 
+	update occurs.
+<p/>    
+    The default position specifier is <i>relative to sun, no offset</i> (such that the 
+    entire day side of the Earth is always visible).
+<h4>Rotation type</h4>
+    Specify a rotated viewing position such that the north is not "straight up" in the center of the rendered 
+    image. The angle can be specified either as a numeric value or the keyword galactic. 
+    When angle is a numeric, it represents the number of degrees by which the image is to be rotated. 
+    Positive values of angle rotate the rendered image counterclockwise; negative values rotate the rendered 
+    image clockwise. The keyword galactic orients the image so that the galactic north is straight up: 
+    the sun is positioned somewhere on the plane passing through the horizontal center of the screen. 
+    The default value of angle is 0. 
+ <h4>Sun Position</h4>   
+    Specify a fixed point on the Earth\'s surface where the Sun is always directly overhead. 
+    The sun_pos_spec (Sun position specifier) consists of two components, both numerical values; 
+    these components are interpreted as the latitude and longitude (in decimal degrees) of the point 
+    where the Sun is directly overhead.
+<p/>
+The details provided for position specifiers (see above) about the interpretation of positive and negative 
+latitude and longitude values and the characters used to delimit specifier components apply to Sun position 
+specifiers as well.
+<p/>
+By default, xearth calculates the actual position of the Sun and updates this position with the progression 
+of time. 
+
+<h4>Magnification factor</h4>
+Specify the magnification of the displayed image. 
+When the orthographic projection is in use, the diameter of the rendered Earth image is <i>factor</i> times the 
+shorter of the width and height of the image (see the -size option, below). For the mercator and 
+cylindrical projections, the width of the rendered image is <i>factor</i> times the width of the image 
+(see the -size option, below). The default magnification factor is 1. 
+
+<h4>Size</h4>
+Specify the size of the image to be rendered. The size_spec (size specifier) consists of two components, 
+both positive integers; these components are interpreted as the width and height (in pixels) of the image.
+<p/>
+The details provided for position specifiers (see above) about the characters used to delimit specifier 
+components apply to size specifiers as well.
+<p/>
+These values default to the dimensions of the screen. 
+
+
+<h4>Shift</h4>
+
+Specify that the center of the rendered Earth image should be shifted by some amount from the center of the 
+image. The shift_spec (shift specifier) consists of two components, both integers; these components are 
+interpreted as the offsets (in pixels) in the X and Y directions.
+<p/>
+The details provided for position specifiers (see above) about the characters used to delimit 
+specifier components apply to shift specifiers as well.
+<p/>
+By default, the center of the rendered Earth image is aligned with the center of the screen. 
+
+<h4>Shade</h4>
+
+Enable/disable shading. When shading is enabled, the surface of the Earth is shaded according to the current 
+position of the Sun (and the values provided for the <i>day brightness</i>, <i>night brightness</i>, and 
+-term options, below). When shading 
+is disabled, use flat colors (green and blue) to render land and water. Shading is enabled by default. 
+
+<h4>Labels</h4>
+Enable/disable labeling. If labeling is enabled, provide a label 
+that indicates the current date and time and current viewing and sun positions. The position of the label 
+can be controlled using the -labelpos option (see below). Labeling is disabled by default. 
+
+<h4>Label Position</h4>
+Specify where the label should be drawn. If labeling is enabled, 
+geom is interpreted as the "position" part an X-style geometry specification (e.g., {+-}<xoffset>{+-}<yoffset>; 
+positive and negative values of xoffset denote offsets from the left and right edges of the display, 
+respectively; positive and negative values of yoffset denote offsets from the top and bottom edges of the 
+display, respectively) indicating how the label should be positioned. The label position defaults to "-5-5" 
+(i.e., five pixels inside the lower right-hand corner of the display). 
+
+<h4>Markers</h4>
+    Enable/disable markers. If markers are enabled, display small 
+    red circles and text labels indicating the location of interesting places on the Earth\'s surface. 
+    Markers are enabled by default.
+
+  <h4>Markerfile</h4>
+  If the file 
+  <p/>
+  /sdcard/xearth/markers.txt
+  <p/> is there, 
+   user-defined marker data (locations and names) will be read from it. 
+   Each line in the marker data file consists of three required components: 
+   the latitude and longitude (expressed in decimal degrees) followed by the 
+   text of the label that should be used. Individual components are delimited by 
+   either whitespace, forward slashes (/), or commas. Components that need to 
+   include delimiter characters (e.g., a multi-word label) should be enclosed in 
+   double quotes. For example, a line in a typical marker data file might look something like:
+   <p/>
+        42.33 -71.08 "Boston, MA"    # USA
+<p/>
+    Everything between a <i>#</i> character and the end of a line, inclusive, is a considered to be a 
+    comment. Blank lines and lines containing only comments are allowed.
+
+<p/>
+    The marker data file is reread every time xearth redraws an image into an X window. In this way, the 
+    marker positions and labels can be dynamic (e.g., given appropriate data sources, markers could be used 
+    to encode hurricane positions, where earthquakes have happened recently, temperatures at fixed locations, 
+    or other forms of "real-time" data).
+<p/>
+    Xearth includes a built-in set of marker data for 76 major locations around the world. 
+
+
+<h4>Stars</h4>
+
+Enable/disable stars. If stars are enabled, the black background of "space" is filled with a random pattern 
+of "stars" (individual white pixels). The fraction of background pixels that are turned into stars can be 
+controlled with the <i>Star Frequency</i> option (see below). Stars are enabled by default. 
+
+<h4>Star Frequency</h4>
+    Set the density of the random star pattern (see <i>Stars</i>, above); frequency indicates the fraction of 
+    background pixels that should be turned into "stars". The default value of frequency is 0.002.
+
+<h4>Bigstars Percentage</h4>
+    Set the percentage of double-width stars (see <i>Stars</i>, above); by default, all stars are a single pixel, 
+    but this option can be used to create some stars that are composed of two horizontal pixels. This provides 
+    a slightly less uniform look to the "night sky".
+
+<h4>Grid</h4>
+    Enable/disable the display of a longitude/latitude grid on the Earth\'s surface. The spacing of major grid 
+    lines and dots between major grid lines can be controlled with the -grid1 and -grid2 options (see below). 
+    Grid display is disabled by default.
+
+<h4>Grid1</h4>
+    Specify the spacing of major grid lines if grid display (see <i>Grid</i>, above) is enabled; major grid 
+    lines are drawn with a 90/grid1 degree spacing. The default value for grid1 is 6, corresponding to 
+    15 degrees between major grid lines.
+<h4>Grid2</h4>
+    Specify the spacing of dots along major grid lines if grid display (see -<i>Grid</i>, above) is enabled. 
+    Along 
+    the equator and lines of longitude, grid dots are drawn with a 90/(grid1 x grid2) degree spacing. The 
+    spacing of grid dots along parallels (lines of latitude) other than the equator is adjusted to keep the 
+    surface distance between grid dots approximately constant. The default value for grid2 is 15; combined 
+    with the default grid1 value of 6, this corresponds to placing grid dots on a one degree spacing.
+
+<h4>Day Brightness</h4>
+    Specify the brightness that should be used to shade the day side of the Earth when shading is enabled. 
+    Pct should be an integer between 0 and 100, inclusive, where 0 indicates total darkness and 100 indicates 
+    total illumination. This value defaults to 100.
+
+<h4>Night Brightness</h4>
+    Specify the brightness that should be used to shade the night side of the Earth when shading is enabled. 
+    Pct should be an integer between 0 and 100, inclusive, where 0 indicates total darkness and 100 indicates 
+    total illumination. This value defaults to 5.
+
+<h4>Term</h4>
+    Specify the shading discontinuity at the terminator (day/night line). Pct should be an integer between 
+    0 and 100, inclusive. A value of x indicates that the shading should immediately jump x percent of the 
+    difference between day and night shading values (see -day and -night, above) when crossing from the night 
+    side to the day side of the terminator. Thus a value of 0 indicates no discontinuity (the original xearth 
+    behavior), and a value of 100 yields a maximal discontinuity (such that the entire day side of the earth 
+    is shaded with the -day shading value). This value defaults to 1.
+
+
+<h4>Time Interval</h4>
+    Wait <i>intervl</i> seconds between updates. This value defaults to 300 seconds 
+    (five minutes).
+<h4>Timewarp factor</h4>
+    Scale the apparent rate at which time progresses by timewarp_factor. The default value of timewarp_factor 
+    is 1.0.
+<h4>Time</h4>
+    Instead of using the current time to determine the "value" of time-dependent positions (e.g., the 
+    position the sun), use a particular fixed_time (expressed in seconds since the Un*x epoch).
+<h4>Mono</h4>
+    Enable/disable monochrome mode. Monochrome mode is enabled by default on 
+    systems with one-bit framebuffers  and disabled by default otherwise.
+<h4>Number of Colors</h4>
+    Specify the number of colors that should be 
+    used. (If markers are enabled (see -markers, above), the actual number of colors used may be one larger 
+    than num_colors.) The default value of num_colors is 64.
+<p/>
+    The maximum allowable value for num_colors is 1024. In practice,
+     using values of num_colors larger than twice the number of distinct shades of red, green, or blue 
+     supported by your hardware is likely to provide little additional benefit, or, in some cases, produce 
+     "banding" effects in the image. Thus, on systems that can support 256 distinct shades of red, green, 
+     or blue (eight bits per component), the largest practical value of num_colors is around 512. Similarly,
+      on systems that support only five or six bits per component (e.g., many systems with 16-bit displays), 
+      the largest practical value of num_colors is probably around 64.
+
+<h4>Font</h4>
+    Select a font to use for drawing text labels (see -label and -markers, above). 
+<h4>Clouds overlay</h4>
+	Select clouds overlay. The overlay is done using a bitmap with clouds.  The cloud maps are not calibrated 
+	or carefully geolocated. They are only meant to make the earth look pretty! Instead of the internal (static) 
+	cloud overlay a file named <i>coulds.jpg</i> or <i>coulds.png</i> will be used if it is present in the 
+	/sdcard/xearth/ folder. Useful cloud-maps can be found here: 
+	<a href=http://xplanet.sourceforge.net/clouds.php>http://xplanet.sourceforge.net/clouds.php</a>
+	(this is also the location, the builtin cloud map was taken from).
+<h4>Alternative Bitmap Textures</h4>
+	Instead of the built-in and standard default polygon Map (green and blue), you can use 
+	Bitmaps to render the earth. You can select from few builtin maps (topographic and night-electric) and any map 
+	file (.jpg or .png) found in the 
+	/sdcard/xearth/ folder. 
+	This feature can also be used to render the moon (use <i>view position moon</i> to simulate moon phases) 
+	or any other planet of the solar system. Even a borg sphere is 
+	available.
+	Useful map textures (e.g. hitorical, moon, jupiter, topographic) can be found here: 
+	<a href=http://flatplanet.sourceforge.net/maps/>http://flatplanet.sourceforge.net/maps/</a>
+	(this is also the location, the builtin maps were taken from). 
+
+]]>
+    </string>
+    <string name="aboutdialog">
+<![CDATA[
+    <h1>About Xearth</h1> 
+    Xearth was originally 
+  Copyright (C) 1989, 1990, 1993-1995, 1999 Kirk Lauritz Johnson
+ <p/>
+ Parts of the source code (as marked) are:<br/>
+    Copyright (C) 1989, 1990, 1991 by Jim Frost<br/>
+    Copyright (C) 1992 by Jamie Zawinski <jwz@lucid.com>
+<p/> 
+  Permission to use, copy, modify and freely distribute xearth for
+  non-commercial and not-for-profit purposes is hereby granted
+  without fee, provided that both the above copyright notice and this
+  permission notice appear in all copies and in supporting
+  documentation.
+ <p/>
+  The author makes no representations about the suitability of this
+  software for any purpose. It is provided "as is" without express or
+  implied warranty.
+ <p/>
+  THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+  INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS,
+  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT
+  OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+  LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+  NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+  CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  <p/>
+Thanks to Frank Solensky for the "-pos moon" and "-rot galactic" stuff.
+<p/>
+The map information used in xearth was derived from the 
+"CIA World Data Bank II map database," as taken from some "cbd" files that were 
+apparently originally generated by Brian Reid at DEC WRL. The builtin cloud map
+is taken from the xplanet project http://xplanet.sourceforge.net/clouds.php.
+The two builtin Bitmap-Textures of the earth (night-electric and UGSG) are taken 
+from the xplanet project (original source NASA) and from
+<a href=http://maps.jpl.nasa.gov/earth.html>JPL\'s maps of the solar system</a> (NASA).
+<p/>
+Thanks to Chris Metcalf for the -bigstars stuff, a pile of general source code cleaning, 
+and spell checking everything carefully.
+<p/>
+Thanks to Chris Hayward, Chris Metcalf, Sherman Mui, Dan Rich, and Leonard Zubkoff for giving the 
+pre-release of version 1.0 a test drive.
+<p/>
+Thanks to Greg Hewgill for the Bitmap rendering and overlay extension to xearth. 
+He also created <a href=http://xearth.org/live>http://xearth.org/live</a> .
+<p/>
+Finally, thanks to everybody that sent encouragement, suggestions, and patches. 
+Apologies to the many people whose good ideas didn\'t make it into this release.
+]]></string>
+
+</resources>

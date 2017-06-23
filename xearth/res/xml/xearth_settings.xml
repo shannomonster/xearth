@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="xearthwallpaper_settings"
+    android:title="@string/xearth_settings" >
+
+    <PreferenceCategory android:title="@string/menu_viewtitle" >
+        <ListPreference
+            android:entries="@array/xearth_projtypes"
+            android:entryValues="@array/xearth_projtypes_values"
+            android:key="prefs_proj"
+            android:defaultValue="0"
+            android:summary=""
+            android:title="@string/menu_projectiontype" />
+        <ListPreference
+            android:entries="@array/xearth_postypes"
+            android:entryValues="@array/xearth_postypes_values"
+            android:key="prefs_pos"
+            android:defaultValue="1"
+            android:summary=""
+            android:title="@string/menu_positiontype" />
+        <ListPreference
+            android:entries="@array/xearth_rottypes"
+            android:entryValues="@array/xearth_rottypes_values"
+            android:key="prefs_rot"
+            android:defaultValue="0"
+            android:summary=""
+            android:title="@string/menu_rotationtype" />
+        <EditTextPreference
+            android:key="prefs_lonpos"
+            android:hint="9.545"
+            android:numeric="decimal"
+            android:maxLength="10"
+            android:defaultValue="0"
+            android:summary=""
+            android:title="@string/menu_longitude" />
+       <EditTextPreference
+            android:key="prefs_latpos"
+            android:hint="54.623"
+            android:numeric="decimal"
+            android:maxLength="10"
+            android:defaultValue="0"
+            android:summary=""
+            android:title="@string/menu_latitude" />
+         <EditTextPreference
+            android:key="prefs_sunpos"
+            android:summary=""
+            android:title="@string/menu_sunpos" />
+        <EditTextPreference
+            android:key="prefs_mag"
+            android:hint="1.0"
+            android:defaultValue="1.0"
+            android:numeric="decimal"
+            android:maxLength="4"
+            android:title="@string/menu_magnification" />
+        <EditTextPreference
+            android:key="prefs_shiftx"
+            android:hint="0"
+            android:defaultValue="0"
+            android:numeric="integer"
+            android:maxLength="5"
+            android:summary=""
+            android:title="@string/menu_shiftx" />
+        <EditTextPreference
+            android:key="prefs_shifty"
+            android:hint="0"
+            android:defaultValue="0"
+            android:numeric="integer"
+            android:maxLength="5"
+            android:summary=""
+            android:title="@string/menu_shifty" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/menu_extrastitle" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="prefs_shade"
+            android:summary="@string/menu_shade"
+            android:title="@string/menu_shade" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="prefs_label"
+            android:summary="@string/menu_labels2"
+            android:title="@string/menu_labels" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="prefs_marker"
+            android:summary="@string/menu_markers2"
+            android:title="@string/menu_markers" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="prefs_stars"
+            android:summary="@string/menu_stars2"
+            android:title="@string/menu_stars" />
+        <EditTextPreference
+            android:hint="0.001-0.1"
+            android:defaultValue="0.002"
+            android:numeric="decimal"
+            android:maxLength="6"
+            android:key="prefs_starfreq"
+            android:summary=""
+            android:title="@string/menu_starfreq" />
+        
+        <EditTextPreference
+            android:key="prefs_bigstars"
+            android:summary=""
+            android:title="@string/menu_starsize" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="prefs_grid"
+            android:summary="@string/menu_grid2"
+            android:title="@string/menu_grid" />
+		<CheckBoxPreference
+            android:defaultValue="false"
+            android:key="prefs_clouds"
+            android:summary="@string/menu_overlay2"
+            android:title="@string/menu_overlay" /> 
+        <ListPreference
+            android:entries="@array/xearth_basemaps"
+            android:entryValues="@array/xearth_basemaps_values"
+            android:defaultValue="0"
+            android:key="prefs_basemap"
+            android:summary=""
+            android:title="@string/menu_basemap" />
+        <EditTextPreference
+            android:hint="0-100"
+            android:defaultValue="100"
+            android:numeric="integer"
+            android:maxLength="3"
+            android:key="prefs_day"
+            android:summary=""
+            android:title="@string/menu_dayb" />
+        <EditTextPreference
+            android:key="prefs_night"
+            android:hint="0-100"
+            android:defaultValue="5"
+            android:numeric="integer"
+            android:maxLength="3"
+            android:summary=""
+            android:title="@string/menu_nightb" />
+        <EditTextPreference
+            android:key="prefs_term"
+            android:hint="0-100"
+            android:defaultValue="1"
+            android:numeric="integer"
+            android:maxLength="3"
+            android:summary=""
+            android:title="@string/menu_term" />
+        <EditTextPreference
+            android:hint="300"
+            android:defaultValue="300"
+            android:numeric="integer"
+            android:maxLength="5"
+            android:key="prefs_wait"
+            android:summary="@string/menu_interval2"
+            android:title="@string/menu_interval" />
+        <EditTextPreference
+            android:hint="1.0"
+            android:defaultValue="1.0"
+            android:numeric="decimal"
+            android:maxLength="5"
+            android:key="prefs_timewarp"
+            android:summary="@string/menu_timewarp2"
+            android:title="@string/menu_timewarp" />
+        <EditTextPreference
+            android:key="prefs_time"
+            android:summary="..."
+            android:title="@string/menu_time" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/menu_impressum" >
+        <Preference
+            android:key="about_version"
+            android:title="@string/word_version" />
+        <Preference
+            android:key="about_copyright"
+            android:summary="@string/word_copyrmeldung"
+            android:title="@string/word_copyright" />
+        <Preference
+            android:key="about_help"
+            android:title="@string/word_help" />
+        <Preference
+            android:key="about_credits_xearth"
+            android:title="@string/preferences_credits_xearth_title" />
+        <Preference
+            android:key="about_market_app"
+            android:title="@string/preferences_credits_market_app_title" />
+        <Preference
+            android:key="about_market_publisher"
+            android:title="@string/preferences_credits_market_publisher_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

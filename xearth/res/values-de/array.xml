@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string-array name="xearth_projtypes">
+        <item>orthographisch</item>
+        <item>mercator</item>
+        <item>zylindrisch</item>
+    </string-array>
+    <string-array name="xearth_projtypes_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="xearth_postypes">
+        <item>fest</item>
+        <item>relativ zur Sonne</item>
+        <item>aus dem Orbit</item>
+        <item>zufällig</item>
+        <item>vom Mond</item>
+    </string-array>
+    <string-array name="xearth_postypes_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="xearth_rottypes">
+        <item>nord orientiert</item>
+        <item>galaktisch orientiert</item>
+    </string-array>
+    <string-array name="xearth_rottypes_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+<string-array name="xearth_basemaps">
+        <item>Küstenlinien Polygon</item>
+        <item>USGS topo + land/ocean</item>
+        <item>night-electric</item>
+    </string-array>
+    <string-array name="xearth_basemaps_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>
