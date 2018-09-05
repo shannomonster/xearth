@@ -303,7 +303,7 @@ BOOL CALLBACK AboutDlgProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
       return SendMessage((HWND)lparam, msg, wparam, lparam);
     case WM_INITDIALOG:
       new StaticHyperlink(GetDlgItem(hwnd, IDC_HOMEPAGE));
-      SetDlgItemText(hwnd, IDC_ABOUT_DATE, "("__DATE__")");
+	  SetDlgItemText(hwnd, IDC_ABOUT_DATE, "(" __DATE__ ")");
       break;
     default:
       return FALSE;

@@ -73,7 +73,7 @@ void QuakeThread(void *)
     if (!page.empty()) {
       EnterCriticalSection(&QuakeMutex);
       Quakes.clear();
-      char *p = strstr(page.c_str(), "yy/mm/dd");
+      char *p = (char*)strstr(page.c_str(), "yy/mm/dd");
       if (p != NULL) {
         p = strchr(p, '\n');
         if (p != NULL) {

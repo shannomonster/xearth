@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{a90f4ba4-c9b5-4322-b2ca-30e782ccaaee}</UniqueIdentifier>
+      <Extensions>c,cpp</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{06645de3-f1b9-4c16-87f1-3ef196fe01dd}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{5949d6de-58c4-4a0a-8236-cec99b555ca7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bmp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dither.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="extarr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gif.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gifout.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mapdata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="markerdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="markers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ppm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="properties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="quake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="registry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="render.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scan.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subclasswnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sunpos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xearth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xearthwin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="extarr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gifint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="giflib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kljcpyrt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="markerdlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="markers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="port.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="properties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="quake.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="registry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subclasswnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xearth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cursor1.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="display.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="dots.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="earth.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="labels.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="quakes.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="shading.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="sun.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="time.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="viewpoint.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="winearth.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="todo.txt" />
+  </ItemGroup>
+</Project>
