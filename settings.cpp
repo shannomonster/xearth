@@ -70,6 +70,7 @@ TSettings::TSettings()
   ZeroMemory(&qupdated, sizeof(qupdated));
 //  strcpy(font_name, "MS Sans Serif");
 //  font_size = 8;
+  disable_rdc = FALSE;
 
   DWORD d;
   BOOL b;
@@ -115,6 +116,7 @@ TSettings::TSettings()
   if (GetRegistryBool("quakes", b))              quakes = b;
   if (GetRegistryDword("qdelay", d))             qdelay = d;
   if (GetRegistryDword("qupdated", d))           qupdated = d;
+  if (GetRegistryDword("disable_rdc", d))           disable_rdc = d;
 }
 
 void TSettings::Save()
@@ -160,6 +162,8 @@ void TSettings::Save()
   SetRegistryBool("quakes", quakes);
   SetRegistryDword("qdelay", qdelay);
   SetRegistryDword("qupdated", qupdated);
+  SetRegistryDword("qupdated", qupdated);
+  SetRegistryBool("disable_rdc", disable_rdc);
 }
 
 void TSettings::LoadMarkers(bool reset)

@@ -1351,6 +1351,7 @@ bool GetSettingsDisplay(HWND hwnd, bool save)
 {
   DWORD wait = GetDlgItemInt(hwnd, IDC_WAITTIME, NULL, FALSE);
   float gamma = GetDlgItemFloat(hwnd, IDC_GAMMA, 1);
+  BOOL disabled_rdc = SendDlgItemMessage(hwnd, IDC_ROT_GALACTIC, BM_GETCHECK, 0, 0) != BST_CHECKED;
   if (gamma <= 0) {
     MessageBox(hwnd, "Gamma correction must be positive.", "xearth", MB_OK|MB_ICONSTOP);
     SetFocus(GetDlgItem(hwnd, IDC_GAMMA));
@@ -1359,6 +1360,7 @@ bool GetSettingsDisplay(HWND hwnd, bool save)
   if (save) {
     Settings.wait = wait;
     Settings.gamma = gamma;
+	Settings.disable_rdc = disabled_rdc;
   }
   return true;
 }
@@ -1377,7 +1379,8 @@ BOOL CALLBACK PropertiesDisplayProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM l
     case WM_INITDIALOG: {
       SetDlgItemInt(hwnd, IDC_WAITTIME, Settings.wait, FALSE);
       SetDlgItemFloat(hwnd, IDC_GAMMA, Settings.gamma);
-      break;
+	  SendDlgItemMessage(hwnd, IDC_DISABLE_RPC, BM_SETCHECK, Settings.disable_rdc, 0);
+	  break;
     }
     case WM_NOTIFY:
       switch (((NMHDR *)lparam)->code) {

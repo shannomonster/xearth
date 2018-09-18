@@ -76,6 +76,7 @@ public:
   DWORD qupdated;
 //  char font_name[MAX_PATH];
 //  DWORD font_size;
+  BOOL disable_rdc;
 };
 
 extern TSettings Settings;

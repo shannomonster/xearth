@@ -1,4 +1,4 @@
-//Microsoft Developer Studio generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -13,13 +13,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -28,15 +26,24 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_EARTH               ICON    DISCARDABLE     "earth.ico"
-IDI_VIEWPOINT           ICON    DISCARDABLE     "viewpoint.ico"
-IDI_SUN                 ICON    DISCARDABLE     "sun.ico"
-IDI_LABELS              ICON    DISCARDABLE     "labels.ico"
-IDI_DOTS                ICON    DISCARDABLE     "dots.ico"
-IDI_SHADING             ICON    DISCARDABLE     "shading.ico"
-IDI_TIME                ICON    DISCARDABLE     "time.ico"
-IDI_DISPLAY             ICON    DISCARDABLE     "display.ico"
-IDI_QUAKES              ICON    DISCARDABLE     "quakes.ico"
+IDI_EARTH               ICON                    "earth.ico"
+
+IDI_VIEWPOINT           ICON                    "viewpoint.ico"
+
+IDI_SUN                 ICON                    "sun.ico"
+
+IDI_LABELS              ICON                    "labels.ico"
+
+IDI_DOTS                ICON                    "dots.ico"
+
+IDI_SHADING             ICON                    "shading.ico"
+
+IDI_TIME                ICON                    "time.ico"
+
+IDI_DISPLAY             ICON                    "display.ico"
+
+IDI_QUAKES              ICON                    "quakes.ico"
+
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -44,18 +51,18 @@ IDI_QUAKES              ICON    DISCARDABLE     "quakes.ico"
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE 
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE 
 BEGIN
     "#include ""afxres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE 
 BEGIN
     "\r\n"
     "\0"
@@ -69,38 +76,32 @@ END
 // Dialog
 //
 
-IDD_ABOUT DIALOG DISCARDABLE  0, 0, 186, 95
-STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_ABOUT DIALOG 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About xearth"
 FONT 8, "MS Sans Serif"
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,129,74,50,14
-    LTEXT           "Xearth for Windows version 1.1.1\nCopyright © 1997,1998,2000,2003,2006 by Greg Hewgill",
-                    IDC_STATIC,7,7,172,16
+    LTEXT           "Xearth for Windows version 1.1.1\nCopyright © 1997,1998,2000,2003,2006 by Greg Hewgill",IDC_STATIC,7,7,172,16
     LTEXT           "Compile date:",IDC_STATIC,7,80,44,8
     LTEXT           "Static",IDC_ABOUT_DATE,55,80,56,8
-    LTEXT           "Portions Copyright © 1989 by Kirk Lauritz Johnson\nPortions Copyright © 1989 by Jim Frost\nPortions Copyright © 1992 by Jamie Zawinski",
-                    IDC_STATIC,7,40,172,25
+    LTEXT           "Portions Copyright © 1989 by Kirk Lauritz Johnson\nPortions Copyright © 1989 by Jim Frost\nPortions Copyright © 1992 by Jamie Zawinski",IDC_STATIC,7,40,172,25
     LTEXT           "http://www.hewgill.com/xearth/",IDC_HOMEPAGE,7,24,102,8
 END
 
-IDD_PROPERTIES_IMAGE DIALOG DISCARDABLE  0, 0, 210, 154
-STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+IDD_PROPERTIES_IMAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Image"
 FONT 8, "MS Sans Serif"
 BEGIN
     GROUPBOX        "Projection",IDC_STATIC,7,7,196,27
-    CONTROL         "Orthographic",IDC_PROJ_ORTHOGRAPHIC,"Button",
-                    BS_AUTORADIOBUTTON,21,18,57,10
-    CONTROL         "Mercator",IDC_PROJ_MERCATOR,"Button",BS_AUTORADIOBUTTON,
-                    84,18,44,10
-    CONTROL         "Cylindrical",IDC_PROJ_CYLINDRICAL,"Button",
-                    BS_AUTORADIOBUTTON,139,18,47,10
+    CONTROL         "Orthographic",IDC_PROJ_ORTHOGRAPHIC,"Button",BS_AUTORADIOBUTTON,21,18,57,10
+    CONTROL         "Mercator",IDC_PROJ_MERCATOR,"Button",BS_AUTORADIOBUTTON,84,18,44,10
+    CONTROL         "Cylindrical",IDC_PROJ_CYLINDRICAL,"Button",BS_AUTORADIOBUTTON,139,18,47,10
     GROUPBOX        "Parameters",IDC_STATIC,7,39,196,67
     LTEXT           "Rotation:",IDC_STATIC,16,52,30,8
     EDITTEXT        IDC_ROT,78,50,59,14,ES_AUTOHSCROLL
-    CONTROL         "Galactic",IDC_ROT_GALACTIC,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,144,52,42,10
+    CONTROL         "Galactic",IDC_ROT_GALACTIC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,144,52,42,10
     LTEXT           "Magnification:",IDC_STATIC,16,69,45,8
     EDITTEXT        IDC_MAG,78,67,115,14,ES_AUTOHSCROLL
     LTEXT           "Shift:",IDC_STATIC,16,88,17,8
@@ -109,34 +110,27 @@ BEGIN
     LTEXT           "Y:",IDC_STATIC,141,88,8,8
     EDITTEXT        IDC_SHIFT_Y,153,86,40,14,ES_AUTOHSCROLL
     GROUPBOX        "",IDC_STATIC,7,113,196,34
-    CONTROL         "Use screen size",IDC_SIZE_DEFAULT,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,14,113,66,10
+    CONTROL         "Use screen size",IDC_SIZE_DEFAULT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,113,66,10
     LTEXT           "Width:",IDC_STATIC,13,130,22,8
     EDITTEXT        IDC_SIZE_CX,60,127,40,14,ES_AUTOHSCROLL
     LTEXT           "Height:",IDC_STATIC,111,130,24,8
     EDITTEXT        IDC_SIZE_CY,150,127,40,14,ES_AUTOHSCROLL
 END
 
-IDD_PROPERTIES_VIEWPOINT DIALOG DISCARDABLE  0, 0, 210, 154
-STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+IDD_PROPERTIES_VIEWPOINT DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Viewpoint"
 FONT 8, "MS Sans Serif"
 BEGIN
     GROUPBOX        "",IDC_STATIC,7,17,196,30
     GROUPBOX        "",IDC_STATIC,7,52,196,30
     GROUPBOX        "",IDC_STATIC,7,91,196,30
-    CONTROL         "Default",IDC_POS_DEFAULT,"Button",BS_AUTORADIOBUTTON,17,
-                    7,39,10
-    CONTROL         "Fixed",IDC_POS_FIXED,"Button",BS_AUTORADIOBUTTON,17,17,
-                    33,10
-    CONTROL         "Sun-relative",IDC_POS_SUNREL,"Button",
-                    BS_AUTORADIOBUTTON,17,52,53,10
-    CONTROL         "Orbit",IDC_POS_ORBIT,"Button",BS_AUTORADIOBUTTON,17,91,
-                    31,10
-    CONTROL         "Moon",IDC_POS_MOON,"Button",BS_AUTORADIOBUTTON,17,125,
-                    34,10
-    CONTROL         "Random",IDC_POS_RANDOM,"Button",BS_AUTORADIOBUTTON,17,
-                    137,43,10
+    CONTROL         "Default",IDC_POS_DEFAULT,"Button",BS_AUTORADIOBUTTON,17,7,39,10
+    CONTROL         "Fixed",IDC_POS_FIXED,"Button",BS_AUTORADIOBUTTON,17,17,33,10
+    CONTROL         "Sun-relative",IDC_POS_SUNREL,"Button",BS_AUTORADIOBUTTON,17,52,53,10
+    CONTROL         "Orbit",IDC_POS_ORBIT,"Button",BS_AUTORADIOBUTTON,17,91,31,10
+    CONTROL         "Moon",IDC_POS_MOON,"Button",BS_AUTORADIOBUTTON,17,125,34,10
+    CONTROL         "Random",IDC_POS_RANDOM,"Button",BS_AUTORADIOBUTTON,17,137,43,10
     LTEXT           "Latitude:",IDC_STATIC,15,30,28,8
     EDITTEXT        IDC_POS_LATITUDE,55,28,40,14,ES_AUTOHSCROLL
     LTEXT           "Longitude:",IDC_STATIC,101,30,34,8
@@ -151,28 +145,20 @@ BEGIN
     EDITTEXT        IDC_POS_INCLINATION,143,102,40,14,ES_AUTOHSCROLL
 END
 
-IDD_PROPERTIES_LABELS DIALOG DISCARDABLE  0, 0, 210, 154
-STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+IDD_PROPERTIES_LABELS DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Labels"
 FONT 8, "MS Sans Serif"
 BEGIN
     GROUPBOX        "",IDC_STATIC,7,7,196,42
-    CONTROL         "Display legend",IDC_LABEL,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,17,7,62,10
-    CONTROL         "Top Left",IDC_LABELPOS_TOPLEFT,"Button",
-                    BS_AUTORADIOBUTTON,14,19,43,10
-    CONTROL         "Bottom Left",IDC_LABELPOS_BOTTOMLEFT,"Button",
-                    BS_AUTORADIOBUTTON,14,32,52,10
-    CONTROL         "Top Right",IDC_LABELPOS_TOPRIGHT,"Button",
-                    BS_AUTORADIOBUTTON,131,19,47,10
-    CONTROL         "Bottom Right",IDC_LABELPOS_BOTTOMRIGHT,"Button",
-                    BS_AUTORADIOBUTTON,131,32,57,10
+    CONTROL         "Display legend",IDC_LABEL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,7,62,10
+    CONTROL         "Top Left",IDC_LABELPOS_TOPLEFT,"Button",BS_AUTORADIOBUTTON,14,19,43,10
+    CONTROL         "Bottom Left",IDC_LABELPOS_BOTTOMLEFT,"Button",BS_AUTORADIOBUTTON,14,32,52,10
+    CONTROL         "Top Right",IDC_LABELPOS_TOPRIGHT,"Button",BS_AUTORADIOBUTTON,131,19,47,10
+    CONTROL         "Bottom Right",IDC_LABELPOS_BOTTOMRIGHT,"Button",BS_AUTORADIOBUTTON,131,32,57,10
     GROUPBOX        "",IDC_STATIC,7,51,196,96
-    CONTROL         "Display city markers",IDC_MARKERS,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,17,51,78,10
-    CONTROL         "List1",IDC_MARKERLIST,"SysListView32",LVS_REPORT | 
-                    LVS_SHOWSELALWAYS | LVS_SORTASCENDING | WS_BORDER | 
-                    WS_TABSTOP,14,64,138,77
+    CONTROL         "Display city markers",IDC_MARKERS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,51,78,10
+    CONTROL         "List1",IDC_MARKERLIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | WS_BORDER | WS_TABSTOP,14,64,138,77
     PUSHBUTTON      "&Add...",IDC_ADD,157,64,40,14
     PUSHBUTTON      "&Remove",IDC_REMOVE,157,80,40,14
     PUSHBUTTON      "&Import...",IDC_IMPORT,157,96,40,14
@@ -180,35 +166,32 @@ BEGIN
     PUSHBUTTON      "Re&set",IDC_RESET,157,128,40,14
 END
 
-IDD_PROPERTIES_DOTS DIALOG DISCARDABLE  0, 0, 210, 154
-STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+IDD_PROPERTIES_DOTS DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Dots"
 FONT 8, "MS Sans Serif"
 BEGIN
     GROUPBOX        "",IDC_STATIC,7,7,196,57
-    CONTROL         "Display stars",IDC_STARS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,17,7,55,10
+    CONTROL         "Display stars",IDC_STARS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,7,55,10
     LTEXT           "Star frequency:",IDC_STATIC,15,22,49,8
     EDITTEXT        IDC_STARFREQ,100,20,94,14,ES_AUTOHSCROLL
     LTEXT           "Percent big stars:",IDC_STATIC,15,45,56,8
     EDITTEXT        IDC_BIGSTARS,100,43,94,14,ES_AUTOHSCROLL
     GROUPBOX        "",IDC_STATIC,7,71,196,57
-    CONTROL         "Display coordinate grid",IDC_GRID,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,17,71,87,10
+    CONTROL         "Display coordinate grid",IDC_GRID,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,71,87,10
     LTEXT           "Grid lines per quadrant:",IDC_STATIC,15,86,74,8
     EDITTEXT        IDC_GRID1,100,84,94,14,ES_AUTOHSCROLL
     LTEXT           "Dots per grid line:",IDC_STATIC,15,109,56,8
     EDITTEXT        IDC_GRID2,100,107,94,14,ES_AUTOHSCROLL
 END
 
-IDD_PROPERTIES_SHADING DIALOG DISCARDABLE  0, 0, 210, 154
-STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+IDD_PROPERTIES_SHADING DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Shading"
 FONT 8, "MS Sans Serif"
 BEGIN
     GROUPBOX        "",IDC_STATIC,7,7,196,81
-    CONTROL         "Enable shading",IDC_SHADE,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,17,7,65,10
+    CONTROL         "Enable shading",IDC_SHADE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,7,65,10
     LTEXT           "Daylight intensity:",IDC_STATIC,15,22,56,8
     EDITTEXT        IDC_DAY,89,20,104,14,ES_AUTOHSCROLL
     LTEXT           "Night intensity:",IDC_STATIC,15,45,47,8
@@ -217,33 +200,33 @@ BEGIN
     EDITTEXT        IDC_TERM,89,66,104,14,ES_AUTOHSCROLL
 END
 
-IDD_PROPERTIES_TIME DIALOG DISCARDABLE  0, 0, 210, 154
-STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+IDD_PROPERTIES_TIME DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Time"
 FONT 8, "MS Sans Serif"
 BEGIN
     GROUPBOX        "",IDC_STATIC,7,7,196,59
-    CONTROL         "Use current time",IDC_TIME_CURRENT,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,17,7,67,10
+    CONTROL         "Use current time",IDC_TIME_CURRENT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,7,67,10
     LTEXT           "Time to use:",IDC_STATIC,14,23,40,8
     EDITTEXT        IDC_TIME,14,35,182,14,ES_AUTOHSCROLL
     LTEXT           "Timewarp factor:",IDC_STATIC,7,81,54,8
     EDITTEXT        IDC_TIMEWARP,83,79,110,14,ES_AUTOHSCROLL
 END
 
-IDD_PROPERTIES_DISPLAY DIALOG DISCARDABLE  0, 0, 210, 154
-STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+IDD_PROPERTIES_DISPLAY DIALOGEX 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Display"
-FONT 8, "MS Sans Serif"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     LTEXT           "Delay between updates (minutes):",IDC_STATIC,7,9,108,8
     EDITTEXT        IDC_WAITTIME,122,7,81,14,ES_AUTOHSCROLL
     LTEXT           "Gamma correction:",IDC_STATIC,7,28,60,8
     EDITTEXT        IDC_GAMMA,122,26,81,14,ES_AUTOHSCROLL
+    CONTROL         "Disable updates over RDC",IDC_DISABLE_RPC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,46,196,10
 END
 
-IDD_PROPERTIES_SUN DIALOG DISCARDABLE  0, 0, 210, 154
-STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+IDD_PROPERTIES_SUN DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Sun"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -252,12 +235,11 @@ BEGIN
     EDITTEXT        IDC_SUNPOS_LATITUDE,55,20,40,14,ES_AUTOHSCROLL
     LTEXT           "Longitude:",IDC_STATIC,102,22,34,8
     EDITTEXT        IDC_SUNPOS_LONGITUDE,142,20,40,14,ES_AUTOHSCROLL
-    CONTROL         "Use actual position",IDC_SUNPOS_DEFAULT,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,17,7,76,10
+    CONTROL         "Use actual position",IDC_SUNPOS_DEFAULT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,7,76,10
 END
 
-IDD_MARKER DIALOG DISCARDABLE  0, 0, 186, 82
-STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_MARKER DIALOG 0, 0, 186, 82
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Marker"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -271,22 +253,19 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,99,61,50,14
 END
 
-IDD_PROPERTIES_QUAKES DIALOG DISCARDABLE  0, 0, 215, 154
-STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+IDD_PROPERTIES_QUAKES DIALOG 0, 0, 215, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Quakes"
 FONT 8, "MS Sans Serif"
 BEGIN
     GROUPBOX        "",IDC_STATIC,7,7,196,140
-    CONTROL         "Show recent earthquakes",IDC_QUAKES,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,17,7,97,10
-    LTEXT           "Interval between updates (hours):",IDC_STATIC,14,25,106,
-                    8
+    CONTROL         "Show recent earthquakes",IDC_QUAKES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,7,97,10
+    LTEXT           "Interval between updates (hours):",IDC_STATIC,14,25,106,8
     EDITTEXT        IDC_QDELAY,135,23,40,14,ES_AUTOHSCROLL
     LTEXT           "Last updated:",IDC_STATIC,15,46,44,8
     LTEXT           "",IDC_QUPDATED,64,46,77,8
     PUSHBUTTON      "Update &Now",IDC_QUPDATE,145,43,50,14
-    CONTROL         "List1",IDC_QUAKELIST,"SysListView32",LVS_REPORT | 
-                    WS_BORDER | WS_TABSTOP,14,63,181,78
+    CONTROL         "List1",IDC_QUAKELIST,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,14,63,181,78
 END
 
 
@@ -296,7 +275,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO DISCARDABLE 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_ABOUT, DIALOG
     BEGIN
@@ -358,8 +337,11 @@ BEGIN
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 203
+        VERTGUIDE, 122
         TOPMARGIN, 7
         BOTTOMMARGIN, 147
+        HORZGUIDE, 26
+        HORZGUIDE, 46
     END
 
     IDD_PROPERTIES_SUN, DIALOG
@@ -394,8 +376,20 @@ END
 // Cursor
 //
 
-IDC_FINGER              CURSOR  DISCARDABLE     "cursor1.cur"
-#endif    // English (U.S.) resources
+IDC_FINGER              CURSOR                  "cursor1.cur"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_PROPERTIES_DISPLAY AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

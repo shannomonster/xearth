@@ -389,7 +389,7 @@ LRESULT CALLBACK XearthProc(HWND w, UINT msg, WPARAM wparam, LPARAM lparam)
       }
       break;
     case WM_TIMER:
-      if (!GetSystemMetrics(SM_REMOTESESSION) &&
+      if ((!Settings.disable_rdc || !GetSystemMetrics(SM_REMOTESESSION)) &&
           Settings.wait > 0 && GetTickCount() / (Settings.wait*60*1000) != LastRefresh) {
         Refresh();
       }
@@ -417,7 +417,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE, LPTSTR lpszCmdLine, int nCm
   StartQuakeThread();
   DWORD tid;
   HANDLE RefreshThread = CreateThread(NULL, 0, DoRefresh, NULL, 0, &tid);
-  if (!GetSystemMetrics(SM_REMOTESESSION)) Refresh();
+  if (!Settings.disable_rdc || !GetSystemMetrics(SM_REMOTESESSION)) Refresh();
   MSG msg;
   while (GetMessage(&msg, 0, 0, 0)) {
     TranslateMessage(&msg);
