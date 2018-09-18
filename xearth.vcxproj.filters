@@ -74,6 +74,9 @@
     <ClCompile Include="xearthwin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gdi_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dialog.h">
