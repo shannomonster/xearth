@@ -13,6 +13,7 @@
 #include <time.h>
 #include <wininet.h>
 
+#include <regex>
 #include <string>
 
 #include "quake.h"
@@ -21,6 +22,8 @@
 #include "settings.h"
 
 using namespace std;
+
+static const char *URL = R"(https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.csv)";
 
 CRITICAL_SECTION QuakeMutex;
 std::list<quake> Quakes;
@@ -55,6 +58,24 @@ string GetUrl(HINTERNET session, const char url[], bool nocache = false)
 
 void QuakeThread(void *)
 {
+  std::regex quakes_re(
+    R"_(^(\d\d\d\d)-(\d\d)-(\d\d))_" // date yyyy-mm-dd
+    R"_(T(\d\d):(\d\d):(\d\d).(\d\d\d)Z,)_" // time HH::MM::SS.sss
+    R"_(([\d\.\-]*),)_" // lat
+    R"_(([\d\.\-]*),)_" // lon
+    R"_(([\d\.\-]*),)_" // depth
+    R"_(([\d\.\-]*),)_" // mag
+    R"_([^,]*,)_" // magType skipped
+    R"_([^,]*,)_" // nst skipped
+    R"_([^,]*,)_" // gap skipped
+    R"_([^,]*,)_" // dmin skipped
+    R"_([^,]*,)_" // rms skipped
+    R"_([^,]*,)_" // net skipped
+    R"_([^,]*,)_" // id skipped
+    R"_([^,]*,)_" // update skipped
+    R"_("([^,]*)",)_", // place
+    std::regex_constants::ECMAScript | std::regex_constants::optimize);
+
   if (Settings.quakes && Settings.qdelay > 0) {
     SetEvent(UpdateNow);
   }
@@ -69,54 +90,29 @@ void QuakeThread(void *)
       Sleep(60*1000);
     }
     HINTERNET session = InternetOpen("xearth for Windows/1.1", INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);
-    string page = GetUrl(session, "http://neic.usgs.gov/neis/finger/quake.asc", true);
+    string page = GetUrl(session, URL, true);
     if (!page.empty()) {
+      std::list<quake> parse_quakes;
+      for (auto siter = std::sregex_iterator(page.begin(), page.end(), quakes_re); siter != std::sregex_iterator{}; ++siter)
+      {
+        quake qk;
+        qk.time.wYear = std::atoi(siter->str(1).c_str());
+        qk.time.wMonth = std::atoi(siter->str(2).c_str());
+        qk.time.wDay = std::atoi(siter->str(3).c_str());
+        qk.time.wHour = std::atoi(siter->str(4).c_str());
+        qk.time.wMinute = std::atoi(siter->str(5).c_str());
+        qk.time.wSecond = std::atoi(siter->str(6).c_str());
+        qk.time.wMilliseconds = std::atoi(siter->str(7).c_str());
+        qk.lat = std::atof(siter->str(8).c_str());
+        qk.lon = std::atof(siter->str(9).c_str());
+        qk.dep = std::atof(siter->str(10).c_str());
+        qk.mag = std::atof(siter->str(11).c_str());
+        qk.location = siter->str(12);
+        parse_quakes.push_back(std::move(qk));
+      }
+
       EnterCriticalSection(&QuakeMutex);
-      Quakes.clear();
-      char *p = (char*)strstr(page.c_str(), "yy/mm/dd");
-      if (p != NULL) {
-        p = strchr(p, '\n');
-        if (p != NULL) {
-          p++;
-        }
-      }
-      if (p) {
-        while (1) {
-          char *q = strchr(p, '\n');
-          if (q == 0) {
-            break;
-          }
-          *q++ = 0;
-          int y, m, d, h, n, s;
-          float lat, lon, dep, mag;
-          char NS, WE;
-          char Q;
-          char name[80];
-          if (sscanf(p, "%d/%d/%d %d:%d:%d %f%c %f%c %f %f%*c%*c%*c%c%s", &y, &m, &d, &h, &n, &s, &lat, &NS, &lon, &WE, &dep, &mag, &Q, name) == 14) {
-            if (NS == 'S') {
-              lat = -lat;
-            }
-            if (WE == 'W') {
-              lon = -lon;
-            }
-            quake qk;
-            qk.time.wYear = y < 100 ? y < 40 ? 2000+y : 1900+y : y;
-            qk.time.wMonth = m;
-            qk.time.wDay = d;
-            qk.time.wHour = h;
-            qk.time.wMinute = n;
-            qk.time.wSecond = s;
-            qk.time.wMilliseconds = 0;
-            qk.lat = lat;
-            qk.lon = lon;
-            qk.dep = dep;
-            qk.mag = mag;
-            qk.location = p+49;
-            Quakes.push_back(qk);
-          }
-          p = q;
-        }
-      }
+      Quakes.swap(parse_quakes);
       LeaveCriticalSection(&QuakeMutex);
 
       HKEY k;
