@@ -71,6 +71,7 @@ TSettings::TSettings()
 //  strcpy(font_name, "MS Sans Serif");
 //  font_size = 8;
   disable_rdc = FALSE;
+  save_png = TRUE;
 
   DWORD d;
   BOOL b;
@@ -117,6 +118,7 @@ TSettings::TSettings()
   if (GetRegistryDword("qdelay", d))             qdelay = d;
   if (GetRegistryDword("qupdated", d))           qupdated = d;
   if (GetRegistryDword("disable_rdc", d))           disable_rdc = d;
+  if (GetRegistryDword("save_png", d))              save_png = d;
 }
 
 void TSettings::Save()
@@ -164,6 +166,7 @@ void TSettings::Save()
   SetRegistryDword("qupdated", qupdated);
   SetRegistryDword("qupdated", qupdated);
   SetRegistryBool("disable_rdc", disable_rdc);
+  SetRegistryBool("save_png", save_png);
 }
 
 void TSettings::LoadMarkers(bool reset)

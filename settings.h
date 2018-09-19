@@ -77,6 +77,7 @@ public:
 //  char font_name[MAX_PATH];
 //  DWORD font_size;
   BOOL disable_rdc;
+  BOOL save_png;
 };
 
 extern TSettings Settings;

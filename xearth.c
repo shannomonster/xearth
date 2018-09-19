@@ -59,6 +59,7 @@ extern int errno;
 #define ModeGIF  (2)
 #define ModeTest (3)
 #define ModeBMP  (4)
+#define ModePNG  (5)
 
 /* tokens in specifiers are delimited by spaces, tabs, commas, and
  * forward slashes
@@ -223,6 +224,10 @@ void output()
   case ModeBMP:
     bmp_output();
     break;
+
+  case ModePNG:
+     png_output();
+     break;
 
   default:
     assert(0);
@@ -791,6 +796,10 @@ void command_line(argc, argv)
     {
       output_mode = ModeBMP;
     }
+    else if (strcmp(argv[i], "-png") == 0)
+    {
+    output_mode = ModePNG;
+    }
     else if (strcmp(argv[i], "-display") == 0)
     {
       warning("-display not relevant for GIF or PPM output");
@@ -1276,7 +1285,7 @@ void usage(msg)
   fprintf(stderr, " [-onepix|-twopix] [-mono|-nomono] [-ncolors num_colors]\n");
   fprintf(stderr, " [-font font_name] [-root|-noroot] [-geometry geom] [-title title]\n");
   fprintf(stderr, " [-iconname iconname] [-name name] [-fork|-nofork] [-once|-noonce]\n");
-  fprintf(stderr, " [-nice priority] [-gif] [-ppm] [-bmp] [-display dpyname] [-version]\n");
+  fprintf(stderr, " [-nice priority] [-gif] [-ppm] [-bmp] [-png] [-display dpyname] [-version]\n");
   fprintf(stderr, "\n");
   exit(1);
 }

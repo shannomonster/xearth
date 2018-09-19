@@ -87,6 +87,7 @@
 #define IDC_POS_MOON                    1069
 #define IDC_ROT_GALACTIC                1070
 #define IDC_DISABLE_RPC                 1071
+#define IDC_SAVE_PNG                    1072
 
 // Next default values for new objects
 // 

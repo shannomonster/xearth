@@ -249,6 +249,9 @@ extern "C" {
 /* bmp.c */
 extern void bmp_output _P((void));
 
+/* png.c */
+extern void png_output _P((void));
+
 /* dither.c */
 extern int     dither_ncolors;
 extern u_char *dither_colormap;

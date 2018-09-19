@@ -93,7 +93,8 @@ DWORD CALLBACK DoRefresh(void *)
       continue;
     }
     char cmdline[1024];
-    sprintf(cmdline, "xearth -bmp");
+    sprintf(cmdline, "xearth");
+    strcat(cmdline, Settings.save_png ? " -png " : " -bmp ");
     strcat(cmdline, " -proj ");
     switch (Settings.proj) {
       case 0: strcat(cmdline, "orth"); break;
