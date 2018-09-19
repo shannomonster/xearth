@@ -124,6 +124,9 @@
     <ClInclude Include="xearth.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="gdi_draw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="cursor1.cur">

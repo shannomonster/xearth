@@ -211,6 +211,7 @@
     <ClInclude Include="extarr.h" />
     <ClInclude Include="gifint.h" />
     <ClInclude Include="giflib.h" />
+    <ClInclude Include="gdi_draw.h" />
     <ClInclude Include="kljcpyrt.h" />
     <ClInclude Include="markerdlg.h" />
     <ClInclude Include="markers.h" />
