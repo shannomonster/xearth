@@ -1,6 +1,18 @@
 #pragma once
+#include <Windows.h>
 
-extern void draw_outlined_string(HDC dc, COLORREF fg, COLORREF bg, int x, int y, const char *text, int len);
-extern void mark_location(HDC dc, const MarkerInfo *info, COLORREF color, int dia);
-extern void draw_label(HDC dc);
-extern void draw_quakes(HDC dc);
+#pragma pack(1)
+struct BitmapHeader {
+   BITMAPFILEHEADER bfh;
+   BITMAPINFOHEADER bmih;
+   RGBQUAD cmap[256];
+   WORD padding;
+};
+#pragma pack()
+
+extern void bmp_setup(struct BitmapHeader *header);
+extern int  bmp_row(u_char *);
+extern void bmp_cleanup();
+extern void gdi_render(HBITMAP bitmap);
+
+extern void *BitmapBits;

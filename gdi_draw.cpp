@@ -15,8 +15,14 @@
 
 #include "quake.h"
 #include "settings.h"
+#include "gdi_draw.h"
 
-extern void LoadMarkers();
+static int bmp_line;
+
+static u16or32 *dith;
+
+void *BitmapBits;
+
 
 void draw_outlined_string(HDC dc, COLORREF fg, COLORREF bg, int x, int y, const char *text, int len)
 {
@@ -206,3 +212,107 @@ void draw_quakes(HDC dc)
   }
 }
 
+void gdi_render(HBITMAP bmp)
+{
+   HDC dc;
+   HGDIOBJ ob, of;
+   MarkerInfo *minfo;
+
+  if (do_markers || do_label || Settings.quakes) {
+    dc = CreateCompatibleDC(0);
+    ob = SelectObject(dc, bmp);
+    of = SelectObject(dc, CreateFont(-8, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, ANSI_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "MS Sans Serif"));
+    if (do_markers) {
+      minfo = marker_info;
+      while (minfo->label != NULL)
+      {
+        mark_location(dc, minfo, RGB(255, 0, 0), 2);
+        minfo += 1;
+      }
+    }
+    if (do_label) {
+      draw_label(dc);
+    }
+    if (Settings.quakes) {
+      draw_quakes(dc);
+    }
+    DeleteObject(SelectObject(dc, of));
+    SelectObject(dc, ob);
+    DeleteDC(dc);
+  }
+}
+
+void bmp_setup(struct BitmapHeader *header)
+{
+  int i, bmp_header_size;
+
+  if (num_colors > 256)
+    fatal("number of colors must be <= 256 with BMP output");
+
+  dither_setup(num_colors);
+  dith = (u16or32 *) malloc((unsigned) sizeof(u16or32) * wdth);
+  assert(dith != NULL);
+
+  for (i=0; i<dither_ncolors; i++)
+  {
+    header->cmap[i].rgbRed   = dither_colormap[i*3+0];
+    header->cmap[i].rgbGreen = dither_colormap[i*3+1];
+    header->cmap[i].rgbBlue  = dither_colormap[i*3+2];
+    header->cmap[i].rgbReserved = 0;
+  }
+  header->cmap[i].rgbRed   = 255;
+  header->cmap[i].rgbGreen = 0;
+  header->cmap[i].rgbBlue  = 0;
+  header->cmap[i].rgbReserved = 0;
+  i++;
+  header->cmap[i].rgbRed   = 255;
+  header->cmap[i].rgbGreen = 255;
+  header->cmap[i].rgbBlue  = 0;
+  header->cmap[i].rgbReserved = 0;
+  i++;
+
+  bmp_header_size = sizeof(BITMAPFILEHEADER)+sizeof(BITMAPINFOHEADER)+256*sizeof(RGBQUAD);
+
+  ZeroMemory(&header->bfh, sizeof(BITMAPFILEHEADER));
+  header->bfh.bfType = 'MB';
+  header->bfh.bfSize = bmp_header_size+wdth*hght;
+  header->bfh.bfOffBits = bmp_header_size;;
+  ZeroMemory(&header->bmih, sizeof(BITMAPINFOHEADER));
+  header->bmih.biSize = sizeof(BITMAPINFOHEADER);
+  header->bmih.biWidth = wdth;
+  header->bmih.biHeight = hght;
+  header->bmih.biPlanes = 1;
+  header->bmih.biBitCount = 8;
+  header->bmih.biCompression = BI_RGB;
+  header->bmih.biClrUsed = 256;
+  header->bmih.biClrImportant = 256;
+  bmp_line = hght - 1;
+}
+
+
+int bmp_row(u_char *row)
+{
+  int i;
+  u16or32 *tmp;
+  u_char *p;
+
+  tmp = dith;
+  dither_row(row, tmp);
+
+  p = ((u_char *)BitmapBits) + bmp_line*wdth;
+
+  for (i = 0; i < wdth; i++) {
+    *p++ = (u_char)tmp[i];
+  }
+
+  bmp_line--;
+
+  return 0;
+}
+
+
+void bmp_cleanup()
+{
+  dither_cleanup();
+  free(dith);
+}
