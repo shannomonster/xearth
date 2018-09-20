@@ -1351,8 +1351,8 @@ bool GetSettingsDisplay(HWND hwnd, bool save)
 {
   DWORD wait = GetDlgItemInt(hwnd, IDC_WAITTIME, NULL, FALSE);
   float gamma = GetDlgItemFloat(hwnd, IDC_GAMMA, 1);
-  BOOL disabled_rdc = SendDlgItemMessage(hwnd, IDC_DISABLE_RPC, BM_GETCHECK, 0, 0) != BST_CHECKED;
-  BOOL save_png = SendDlgItemMessage(hwnd, IDC_SAVE_PNG, BM_GETCHECK, 0, 0) != BST_CHECKED;
+  BOOL disabled_rdc = SendDlgItemMessage(hwnd, IDC_DISABLE_RPC, BM_GETCHECK, 0, 0) == BST_CHECKED;
+  BOOL save_png = SendDlgItemMessage(hwnd, IDC_SAVE_PNG, BM_GETCHECK, 0, 0) == BST_CHECKED;
   if (gamma <= 0) {
     MessageBox(hwnd, "Gamma correction must be positive.", "xearth", MB_OK|MB_ICONSTOP);
     SetFocus(GetDlgItem(hwnd, IDC_GAMMA));
