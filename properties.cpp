@@ -153,7 +153,7 @@ int CALLBACK PropSheetProc(HWND hwnd, UINT msg, LPARAM lparam)
 
 void DoApply(HWND hwnd)
 {
-  Refresh();
+  if (!Settings.disable_rdc || !GetSystemMetrics(SM_REMOTESESSION)) Refresh();
   RECT r;
   GetWindowRect(GetParent(hwnd), &r);
   Settings.properties.x = r.left;
