@@ -144,7 +144,7 @@ void QuakeThread(void *)
       }
 
       Settings.qupdated = time(0);
-      SetRegistryDword("qupdated", Settings.qupdated);
+      SetRegistryQword("qupdated", Settings.qupdated);
       Updated = true;
     }
     InternetCloseHandle(session);

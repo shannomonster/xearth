@@ -980,6 +980,7 @@ BOOL CALLBACK PropertiesQuakesProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lp
       ListView_InsertColumn(list, 4, &lvc);
       QuakesUpdated();
       if (Settings.qupdated) {
+        static_assert(sizeof(time_t) <= sizeof(Settings.qupdated), "");
         tm *t = localtime((time_t *)&Settings.qupdated);
         SYSTEMTIME st;
         st.wYear = 1900 + t->tm_year;

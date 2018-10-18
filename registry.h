@@ -18,6 +18,9 @@ BOOL GetRegistryString(const char *name, char *data, DWORD datasize, const char 
 void SetRegistryDword(const char *name, DWORD data, const char *key = DefaultRegistryKey);
 BOOL GetRegistryDword(const char *name, DWORD &data, const char *key = DefaultRegistryKey);
 
+void SetRegistryQword(const char *name, unsigned long long data, const char *key = DefaultRegistryKey);
+BOOL GetRegistryQword(const char *name, unsigned long long &data, const char *key = DefaultRegistryKey);
+
 void SetRegistryBool(const char *name, BOOL data, const char *key = DefaultRegistryKey);
 BOOL GetRegistryBool(const char *name, BOOL &data, const char *key = DefaultRegistryKey);
 

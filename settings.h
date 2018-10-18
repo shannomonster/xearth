@@ -73,7 +73,7 @@ public:
   DWORD time;
   BOOL quakes;
   DWORD qdelay;
-  DWORD qupdated;
+  unsigned long long qupdated;
 //  char font_name[MAX_PATH];
 //  DWORD font_size;
   BOOL disable_rdc;

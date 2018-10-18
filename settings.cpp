@@ -73,6 +73,7 @@ TSettings::TSettings()
   disable_rdc = FALSE;
   save_png = TRUE;
 
+  unsigned long long q;
   DWORD d;
   BOOL b;
   float f;
@@ -116,7 +117,7 @@ TSettings::TSettings()
   if (GetRegistryDword("time", d))               time = d;
   if (GetRegistryBool("quakes", b))              quakes = b;
   if (GetRegistryDword("qdelay", d))             qdelay = d;
-  if (GetRegistryDword("qupdated", d))           qupdated = d;
+  if (GetRegistryQword("qupdated", q))           qupdated = q;
   if (GetRegistryDword("disable_rdc", d))           disable_rdc = d;
   if (GetRegistryDword("save_png", d))              save_png = d;
 }
@@ -163,8 +164,7 @@ void TSettings::Save()
   SetRegistryDword("time", time);
   SetRegistryBool("quakes", quakes);
   SetRegistryDword("qdelay", qdelay);
-  SetRegistryDword("qupdated", qupdated);
-  SetRegistryDword("qupdated", qupdated);
+  SetRegistryQword("qupdated", qupdated);
   SetRegistryBool("disable_rdc", disable_rdc);
   SetRegistryBool("save_png", save_png);
 }
