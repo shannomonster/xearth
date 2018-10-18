@@ -21,7 +21,7 @@
 #include <wincodec.h>
 
 extern void LoadMarkers();
-static void save_png(HBITMAP bmp, wchar_t *filenam);
+static HRESULT save_png(HBITMAP bmp, wchar_t *filenam);
 
 extern "C" void png_output()
 {
@@ -51,72 +51,54 @@ extern "C" void png_output()
   SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, fn, 0);
 }
 
-void save_png(HBITMAP bmp, wchar_t *filename)
+HRESULT save_png(HBITMAP bmp, wchar_t *filename)
 {
-   static CComPtr<IWICImagingFactory> pWICFactory;
-   HRESULT hr = S_OK;
+   struct InitCom {
+      InitCom() { CoInitializeEx(NULL, COINIT_MULTITHREADED); }
+      ~InitCom() { CoUninitialize(); }
+   } initcom;
 
-   if (nullptr == pWICFactory)
-   {
-      CoInitializeEx(NULL, COINIT_MULTITHREADED);
-      hr = pWICFactory.CoCreateInstance(
-         CLSID_WICImagingFactory, nullptr, CLSCTX_INPROC_SERVER);
-   }
+   CComPtr<IWICImagingFactory> pWICFactory;
+   HRESULT hr = pWICFactory.CoCreateInstance(
+      CLSID_WICImagingFactory, nullptr, CLSCTX_INPROC_SERVER);
+   if (FAILED(hr)) return hr;
 
    CComPtr<IWICBitmap> pBitmap;
-   if (SUCCEEDED(hr))
-   {
-      hr = pWICFactory->CreateBitmapFromHBITMAP(
-         bmp, NULL, WICBitmapIgnoreAlpha, &pBitmap);
-   }
+   hr = pWICFactory->CreateBitmapFromHBITMAP(
+      bmp, NULL, WICBitmapIgnoreAlpha, &pBitmap);
+   if (FAILED(hr)) return hr;
 
    CComPtr<IWICBitmapEncoder> encoder;
-   if (SUCCEEDED(hr))
-   {
-      hr = pWICFactory->CreateEncoder(
-         GUID_ContainerFormatPng, NULL, &encoder);
-   }
+   hr = pWICFactory->CreateEncoder(
+      GUID_ContainerFormatPng, NULL, &encoder);
+   if (FAILED(hr)) return hr;
 
    CComPtr<IWICStream> pFileStream;
-   if (SUCCEEDED(hr))
-   {
-      hr = pWICFactory->CreateStream(&pFileStream);
-   }
+   hr = pWICFactory->CreateStream(&pFileStream);
+   if (FAILED(hr)) return hr;
 
-   if (SUCCEEDED(hr))
-   {
-      hr = pFileStream->InitializeFromFilename(filename, GENERIC_WRITE);
-   }
+   hr = pFileStream->InitializeFromFilename(filename, GENERIC_WRITE);
+   if (FAILED(hr)) return hr;
 
-   if (SUCCEEDED(hr))
-   {
-      hr = encoder->Initialize(pFileStream, WICBitmapEncoderNoCache);
-   }
+   hr = encoder->Initialize(pFileStream, WICBitmapEncoderNoCache);
+   if (FAILED(hr)) return hr;
 
    CComPtr<IWICBitmapFrameEncode> pBitmapFrameEncode;
    CComPtr<IPropertyBag2> pPropertyBag;
-   if (SUCCEEDED(hr))
-   {
-      hr = encoder->CreateNewFrame(&pBitmapFrameEncode, &pPropertyBag);
-   }
+   hr = encoder->CreateNewFrame(&pBitmapFrameEncode, &pPropertyBag);
+   if (FAILED(hr)) return hr;
 
-   if (SUCCEEDED(hr))
-   {
-      hr = pBitmapFrameEncode->Initialize(pPropertyBag);
-   }
+   hr = pBitmapFrameEncode->Initialize(pPropertyBag);
+   if (FAILED(hr)) return hr;
 
-   if (SUCCEEDED(hr))
-   {
-      hr = pBitmapFrameEncode->WriteSource(pBitmap, NULL);
-   }
+   hr = pBitmapFrameEncode->WriteSource(pBitmap, NULL);
+   if (FAILED(hr)) return hr;
 
-   if (SUCCEEDED(hr))
-   {
-      hr = pBitmapFrameEncode->Commit();
-   }
+   hr = pBitmapFrameEncode->Commit();
+   if (FAILED(hr)) return hr;
 
-   if (SUCCEEDED(hr))
-   {
-      hr = encoder->Commit();
-   }
+   hr = encoder->Commit();
+   if (FAILED(hr)) return hr;
+
+   return S_OK;
 }
