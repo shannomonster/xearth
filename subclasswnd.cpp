@@ -14,22 +14,22 @@
 SubclassedWindow::SubclassedWindow(HWND hwnd)
  : Hwnd(hwnd)
 {
-  OldWndProc = (WNDPROC)GetWindowLong(Hwnd, GWL_WNDPROC);
-  SetWindowLong(Hwnd, GWL_WNDPROC, (long)StaticWndProc);
-  SetWindowLong(Hwnd, GWL_USERDATA, (long)this);
+  OldWndProc = (WNDPROC)SetWindowLongPtr(Hwnd, GWL_WNDPROC);
+  SetWindowLongPtr(Hwnd, GWL_WNDPROC, (LONG_PTR)StaticWndProc);
+  SetWindowLongPtr(Hwnd, GWL_USERDATA, (LONG_PTR)this);
 }
 
 SubclassedWindow::~SubclassedWindow()
 {
-  SetWindowLong(Hwnd, GWL_WNDPROC, (long)OldWndProc);
+    SetWindowLongPtr(Hwnd, GWL_WNDPROC, (LONG_PTR)OldWndProc);
 }
 
 LRESULT CALLBACK SubclassedWindow::StaticWndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 {
-  SubclassedWindow *This = reinterpret_cast<SubclassedWindow *>(GetWindowLong(hwnd, GWL_USERDATA));
+  SubclassedWindow *This = reinterpret_cast<SubclassedWindow *>(GetWindowLongPtr(hwnd, GWL_USERDATA));
   LRESULT r = This->WndProc(hwnd, msg, wparam, lparam);
   if (msg == WM_NCDESTROY) { // last message this window will get
-    SetWindowLong(This->Hwnd, GWL_WNDPROC, (long)This->OldWndProc);
+      SetWindowLongPtr(This->Hwnd, GWL_WNDPROC, (LONG_PTR)This->OldWndProc);
     delete This;
   }
   return r;
